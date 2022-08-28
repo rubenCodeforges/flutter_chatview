@@ -59,7 +59,7 @@ class ChatViewAppBar extends StatelessWidget {
       elevation: elevation ?? 1,
       child: Container(
         padding:
-            EdgeInsets.only(top: MediaQuery.of(context).padding.top, bottom: 4),
+        EdgeInsets.only(top: MediaQuery.of(context).padding.top, bottom: 4),
         color: backGroundColor ?? Colors.white,
         child: Row(
           children: [
@@ -80,7 +80,7 @@ class ChatViewAppBar extends StatelessWidget {
                       padding: const EdgeInsets.only(right: 8.0),
                       child: profileWidget,
                     )
-                  else if (profilePicture != null)
+                  else if (profilePicture != null && profileWidget == null)
                     Padding(
                       padding: const EdgeInsets.only(right: 8.0),
                       child: CircleAvatar(
