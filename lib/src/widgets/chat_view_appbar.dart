@@ -33,6 +33,7 @@ class ChatViewAppBar extends StatelessWidget {
     this.title,
     this.userStatus,
     this.profilePicture,
+    this.profileWidget,
     this.titleTextStyle,
     this.userStatusTextStyle,
     this.backArrowColor,
@@ -44,6 +45,7 @@ class ChatViewAppBar extends StatelessWidget {
   final String? title;
   final String? userStatus;
   final String? profilePicture;
+  final Widget? profileWidget;
   final TextStyle? titleTextStyle;
   final TextStyle? userStatusTextStyle;
   final Color? backArrowColor;
@@ -73,7 +75,12 @@ class ChatViewAppBar extends StatelessWidget {
             Expanded(
               child: Row(
                 children: [
-                  if (profilePicture != null)
+                  if (profileWidget != null)
+                    Padding(
+                      padding: const EdgeInsets.only(right: 8.0),
+                      child: profileWidget,
+                    )
+                  else if (profilePicture != null)
                     Padding(
                       padding: const EdgeInsets.only(right: 8.0),
                       child: CircleAvatar(
